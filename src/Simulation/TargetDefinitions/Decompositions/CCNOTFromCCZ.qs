@@ -30,7 +30,10 @@ namespace Microsoft.Quantum.Intrinsic {
             }
         }
         controlled (ctls, ...) {
-            if Length(ctls) == 1 {
+            if Length(ctls) == 0 {
+                CCNOT(control1, control2, target);
+            }
+            elif Length(ctls) == 1 {
                 Controlled X([ctls[0], control1, control2], target);
             }
             elif Length(ctls) == 2 {
