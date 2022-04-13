@@ -107,20 +107,6 @@ namespace Microsoft.Quantum.Intrinsic {
                     CRz(temps[5], theta, qubit);
                 }
             }
-            elif Length(ctls) == 7 {
-                use temps = Qubit[6];
-                within {
-                    PhaseCCX(ctls[0], ctls[1], temps[0]);
-                    PhaseCCX(ctls[2], ctls[3], temps[1]);
-                    PhaseCCX(ctls[4], ctls[5], temps[2]);
-                    PhaseCCX(ctls[6], temps[0], temps[3]);
-                    PhaseCCX(temps[1], temps[2], temps[4]);
-                    PhaseCCX(temps[3], temps[4], temps[5]);
-                }
-                apply {
-                    CRz(temps[5], theta, qubit);
-                }
-            }
             elif Length(ctls) == 8 {
                 use temps = Qubit[7];
                 within {
